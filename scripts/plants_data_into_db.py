@@ -4,21 +4,13 @@ import duckdb
 ECOCROP_CSV_URL = (
     "https://raw.githubusercontent.com/OpenCLIM/ecocrop/main/EcoCrop_DB.csv"
 )
+duckdb.connect("ecocrop.duckdb")
 
-# 1. Load CSV into pandas
-df = pd.read_csv(ECOCROP_CSV_URL, encoding="latin1")
+ecocrop_df = pd.read_csv(ECOCROP_CSV_URL, encoding="latin1")
 
-print("Loaded rows:", len(df))
-print(df.head())
+print("Loaded rows:", len(ecocrop_df))
 
-# 2. Connect to DuckDB
-con = duckdb.connect("ecocrop.duckdb")
-
-# 3. Create table from DataFrame
-#con.execute("DROP TABLE IF EXISTS ecocrop_raw")
-con.register("ecocrop_df", df)
-
-con.execute("""
+duckdb.sql("""
     CREATE TABLE IF NOT EXISTS ecocrop_raw AS 
     SELECT * FROM ecocrop_df
 """)
