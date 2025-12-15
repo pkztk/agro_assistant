@@ -1,6 +1,6 @@
 # ✅ **README.md (EN, minimal, first commit)**
 
-```
+```markdown
 # agro_assistant
 
 `agro_assistant` is a small utility project intended to support basic data processing tasks related to agriculture and field observations.  
