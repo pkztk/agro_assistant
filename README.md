@@ -36,12 +36,6 @@ cd agro_assistant
 pip install -r requirements.txt
 ```
 
-or with Poetry:
-
-```bash
-poetry install
-```
-
 ## Basic Usage Example
 
 ```python
