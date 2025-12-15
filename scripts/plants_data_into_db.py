@@ -4,7 +4,7 @@ import duckdb
 ECOCROP_CSV_URL = (
     "https://raw.githubusercontent.com/OpenCLIM/ecocrop/main/EcoCrop_DB.csv"
 )
-duckdb.connect("ecocrop.duckdb")
+duckdb.connect("../data/ecocrop.duckdb")
 
 ecocrop_df = pd.read_csv(ECOCROP_CSV_URL, encoding="latin1")
 
